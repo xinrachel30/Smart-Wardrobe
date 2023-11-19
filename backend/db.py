@@ -37,7 +37,7 @@ class Style(db.Model):
     style = db.Column(db.String(64), nullable=False)
     category = db.Column(db.String(64), nullable=False)  # Assuming 'Top', 'Bottom', 'Shoe' are the only categories
     position = db.Column(db.String(64), nullable=False)  # Assuming 'Inner', 'Middle', 'Outer' are the only positions
-    cold_resistance = db.Column(db.Integer, nullable=False)  # Assuming this is an integer between 1 and 4
+    cold_resistance = db.Column(db.Integer, nullable=False)  # Assuming this is an integer between 1 and 8
 
     item_items = db.relationship('Item', order_by='Item.id', back_populates='style_rel')
 
