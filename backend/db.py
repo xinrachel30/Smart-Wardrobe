@@ -6,7 +6,11 @@ db = SQLAlchemy()
 class Item(db.Model):
     """
     id	name(Inputed by user)	style(Related to Category, chosen by user)	description(Inputed by user)	
-1	Red_Sweater	1	/	/	
+    1	Red_Sweater         	1	                                        /	
+
+    AF: This table represents all clothing items created by users, including their names, their styles(that 
+    specifics their attribution, and their descriptions (possibly none).
+    RI: None. 
     """
     __tablename__ = 'item'
     id = db.Column(db.Integer, primary_key=True)
@@ -23,6 +27,10 @@ class Style(db.Model):
     2	longSleeve	Top	Inner	2
     3	shortSleeve	Top	Inner	1
     4	jacket	Top	Outer	4
+
+    AF: This table represents all styles a clothes might have, including their category, position, and cold_resistance
+    for future recommendation algorithm. 
+    RI: style must not have duplication. 
     """
     __tablename__ = 'style'
     id = db.Column(db.Integer, primary_key=True)
