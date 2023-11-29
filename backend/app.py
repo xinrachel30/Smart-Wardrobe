@@ -124,8 +124,8 @@ def create_style():
         return failure_response("Shoe position invalid: A shoe must have a position of outer", 400)
     if new_position != "inner" or new_position != "outer" or new_position != "middle":
         return failure_response("Position invalid: must be outer, inner, or middle", 400)
-    if new_cold_resistance > 8 or new_cold_resistance < 1:
-        return failure_response("Cold resistance invalid: must be an int between 1 and 8, inclusive", 400)
+    if new_cold_resistance < 0: 
+        return failure_response("Invalid cold resistance; ")
 
     new_style = Style(
         category = new_category, 

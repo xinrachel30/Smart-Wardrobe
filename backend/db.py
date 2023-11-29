@@ -76,7 +76,7 @@ class Item(db.Model):
 
 class Style(db.Model):
     """		
-    id	style	category(Top/Bottom/Shoe)	position(Inner/Middle/Outer)	cold_resistance(Range from 1 to 4)
+    id	style	category(Top/Bottom/Shoe)	position(Inner/Middle/Outer)	cold_resistance(in Fahrenheit)
     1	sweater	Top	Middle	3
     2	longSleeve	Top	Inner	2
     3	shortSleeve	Top	Inner	1
@@ -92,7 +92,7 @@ class Style(db.Model):
     style = db.Column(db.String(64), nullable=False)
     category = db.Column(db.String(64), nullable=False)  # Assuming 'Top', 'Bottom', 'Shoe' are the only categories
     position = db.Column(db.String(64), nullable=False)  # Assuming 'Inner', 'Middle', 'Outer' are the only positions
-    cold_resistance = db.Column(db.Integer, nullable=False)  # Assuming this is an integer between 1 and 8
+    cold_resistance = db.Column(db.Integer, nullable=False)  
 
     item_items = db.relationship('Item', order_by='Item.id', back_populates='style_rel')
 
