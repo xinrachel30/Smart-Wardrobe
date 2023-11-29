@@ -2,9 +2,10 @@ import json
 from db import db
 from flask import Flask, request
 
-from db import Course
-from db import User
-from db import Assignment
+from db import Item
+from db import Style
+from algo import 
+
 
 
 db_filename = "cms.db"
@@ -24,6 +25,9 @@ def success_response(data, code=200):
 
 def failure_response(message, code=404):
     return json.dumps({"error": message}), code
+
+@app.route("/", methods=["GET"])
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000, debug=True)
