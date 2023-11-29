@@ -27,6 +27,7 @@ class Item(db.Model):
         """
         self.name = kwargs.get("name", "")
         self.description = kwargs.get("description")
+        self.style_id = kwargs.get("style_id")
 
     def serialize(self):
         """
@@ -35,13 +36,18 @@ class Item(db.Model):
         return {
             "id": self.id, 
             "name": self.name,
-            "description": self.description
+            "description": self.description, 
+            "style_id": self.style_id
         }
     
-    def recommend(self, temp):
+    @staticmethod
+    def recommend(temp):
         """
         Recommends an outfit based on the temperature
         """
+        opt_temp = 75
+        temp = opt_temp - temp
+        print(temp)
         tops = Item.query.join(Style).filter(Style.category == 'Top').all()
         bottoms = Item.query.join(Style).filter(Style.category == 'Bottom').all()
         shoes = Item.query.join(Style).filter(Style.category == 'Shoe').all()
@@ -52,10 +58,12 @@ class Item(db.Model):
                 "position": item.style_rel.position,
                 "cold_resistance": item.style_rel.cold_resistance
             } for item in items]
-
+        for top in items_to_dict_list(tops): 
+            print(top)
         recommended_tops = get_recommendation(temp, items_to_dict_list(tops))
         recommended_bottoms = get_recommendation(temp, items_to_dict_list(bottoms))
         recommended_shoes = get_recommendation(temp, items_to_dict_list(shoes))
+
 
         def ids_to_names(ids, items):
             return [item.name for item in items if item.id in ids]
@@ -76,7 +84,7 @@ class Style(db.Model):
 
     AF: This table represents all styles a clothes might have, including their category, position, and cold_resistance
     for future recommendation algorithm. 
-    RI: style must not have duplication. All shoe should have position 'Outer' for you can't wear shoes outside
+    RI: style must not have duplication. All shoe should have position 'Outer' because you can't wear shoes outside
     of another pair of shoes 
     """
     __tablename__ = 'style'
@@ -95,7 +103,7 @@ class Style(db.Model):
         self.style = kwargs.get("style")
         self.category = kwargs.get("category")
         self.position = kwargs.get("position")
-        self.cold_resistnace = kwargs.get("cold_resistance")
+        self.cold_resistance = kwargs.get("cold_resistance")
 
     def serialize(self):
         """
@@ -103,7 +111,6 @@ class Style(db.Model):
         """
         return {
             "id": self.id, 
-            "style": self.style,
             "position": self.position, 
             "cold_resistance": self.cold_resistance
         }

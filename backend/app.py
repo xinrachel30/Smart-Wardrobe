@@ -15,21 +15,22 @@ app.config["SQLALCHEMY_ECHO"] = True
 db.init_app(app)
 with app.app_context():
     db.create_all()
-    
-#initialize the database
-sweater = Style(style="sweater", category="Top", position="Middle", cold_resistance=3)
-jeans = Style(style="jeans", category="Bottom", position="Middle", cold_resistance=2)
-longSleeve = Style(style="longSleeve", category="Top", position="Inner", cold_resistance=2)
-shortSleeve = Style(style="shortSleeve", category="Top", position="Inner", cold_resistance=1)
-jacket = Style(style="jacket", category="Top", position="Outer", cold_resistance=4)
 
-db.session.add(sweater)
-db.session.add(jeans)
-db.session.add(longSleeve)
-db.session.add(shortSleeve)
-db.session.add(jacket)
+    #initializing some example styles for the database
+    sweater = Style(style="sweater", category="Top", position="Middle", cold_resistance=15)
+    jeans = Style(style="jeans", category="Bottom", position="Middle", cold_resistance=10)
+    shorts = Style(style="shorts", category="Bottom", position="Middle", cold_resistance=5)
+    longSleeve = Style(style="longSleeve", category="Top", position="Inner", cold_resistance=10)
+    shortSleeve = Style(style="shortSleeve", category="Top", position="Inner", cold_resistance=5)
+    jacket = Style(style="jacket", category="Top", position="Outer", cold_resistance=20)
 
-db.session.commit()
+    db.session.add(sweater)
+    db.session.add(jeans)
+    db.session.add(longSleeve)
+    db.session.add(shortSleeve)
+    db.session.add(jacket)
+
+    db.session.commit()
 
 # generalized response formats
 def success_response(data, code=200):
@@ -39,7 +40,8 @@ def failure_response(message, code=404):
     return json.dumps({"error": message}), code
 
 @app.route("/", methods=["GET"])
-
+def hello_world():
+    return "Hello, World!"
 # Item Routes
 
 @app.route("/item/", methods=["GET"])
@@ -68,13 +70,19 @@ def create_item():
     body = json.loads(request.data)
     new_name = body.get("name")
     new_description = body.get("description")
+    new_style_id = body.get("style")
     
-    if new_name is None or new_description is None:
-        return failure_response("name or description of item not found", 400)
+    if new_name is None or new_style_id is None:
+        return failure_response("name or style id of item not found", 400)
+    
+    style_selected = Style.query.filter_by(id=new_style_id).first()
+    if style_selected is None:
+        return failure_response("selected style does not exist", 400)
     
     new_item = Item(
         name = new_name, 
-        description = new_description
+        description = new_description,
+        style_id = new_style_id
     )
 
     db.session.add(new_item)
@@ -109,10 +117,11 @@ def create_style():
     if new_category is None or new_position is None or new_cold_resistance is None:
         return failure_response("Category or position or cold resistance field not found", 400)
     
-    if new_category != "top" or new_category != "bottom" or new_category != "shoe":
+    # Verifying preconditions for a Style
+    if new_category != "top" or new_category != "bottom" or new_category != "shoe": 
         return failure_response("Category invalid: must be top, bottom, or shoe", 400)
     if new_category == "shoe" and new_position != "outer":
-        return failure_response("")
+        return failure_response("Shoe position invalid: A shoe must have a position of outer", 400)
     if new_position != "inner" or new_position != "outer" or new_position != "middle":
         return failure_response("Position invalid: must be outer, inner, or middle", 400)
     if new_cold_resistance > 8 or new_cold_resistance < 1:
@@ -131,8 +140,11 @@ def create_style():
 # Getting outfit recommendation
 @app.route("/recommendation/<int:temperature>", methods=["GET"])
 def recommend_outfit(temperature):
-    return success_response(db.recomment(temperature), 200)
+    """
+    Endpoint for getting a recommended outfit given a temperature provided in fahrenheit
+    """
+    return success_response(Item.recommend(temp=temperature), 200)
     
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)

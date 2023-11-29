@@ -4,10 +4,11 @@ def get_recommendation(temp, items):
     requirements: items should be a list of dictionary that includes items in the same category, and for each dictionary, 
     it should include the following fields: id, position, cold_resistance
     """
-    inner_items = [item for item in items if item['position'] == 'inner'] + [None]
-    middle_items = [item for item in items if item['position'] == 'middle']
-    outer_items = [item for item in items if item['position'] == 'outer'] + [None]
-
+    allItem = items
+    inner_items = [item for item in items if item['position'] == 'Inner'] + [None]
+    middle_items = [item for item in items if item['position'] == 'Middle']
+    outer_items = [item for item in items if item['position'] == 'Outer'] + [None]
+    
     max_cold_resistance = sum(item['cold_resistance'] for item in items)
     dp = [[(float('inf'), []) for _ in range(max_cold_resistance + 1)] for _ in range(len(middle_items) + 1)]
     dp[0][0] = (0, []) 
@@ -35,7 +36,14 @@ def get_recommendation(temp, items):
                     if diff < best_diff or (diff == best_diff and count < len(best_combo)):
                         best_diff = diff
                         best_combo = items + ([inner['id']] if inner else []) + ([outer['id']] if outer else [])
-
+    if len(best_combo) == 0 and len(items) > 0:
+        min_cold_resistance = allItem[0]['cold_resistance']
+        min_id =  allItem[0]['id']
+        for item in allItem:
+            if item['cold_resistance'] < min_cold_resistance:
+                min_cold_resistance = item['cold_resistance']
+                min_id = item['id']
+        best_combo = [min_id]
     return best_combo
 
 # test
