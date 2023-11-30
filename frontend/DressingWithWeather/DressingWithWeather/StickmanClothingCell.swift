@@ -15,7 +15,6 @@ class StickmanClothingCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         backgroundColor = .white
         
         layer.cornerRadius = 16
@@ -29,11 +28,11 @@ class StickmanClothingCell: UICollectionViewCell {
     private func setUpItem() {
         //TODO: make the size of the cells readable
         item.text = "Anonymous"
-        item.font = .systemFont(ofSize: 14)
-    
+        item.font = .systemFont(ofSize: 19)
+
         item.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(item)
-        
+
         NSLayoutConstraint.activate([
             item.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor),
             item.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
