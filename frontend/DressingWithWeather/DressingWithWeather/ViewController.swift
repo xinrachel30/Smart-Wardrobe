@@ -7,29 +7,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController{
     
     // MARK: - Properties (view)
     
-    private lazy var tableView: UITableView = {
-        let cells = UITableView()
+    private lazy var collectionView: UICollectionView = {
+        let cells = UICollectionView()
         cells.translatesAutoresizingMaskIntoConstraints = false
         cells.backgroundColor = .orange
-        cells.rowHeight = UITableView.automaticDimension
-        cells.estimatedRowHeight = 44
-        cells.separatorStyle = .none
-        cells.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        cells.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         return cells
     }()
     
     // MARK: - Properties (data)
+    
+    var posters:[String] = []
     //let InputMe:UITextField
     
     // MARK: - viewDidLoad
     
     override func loadView() {
         super.loadView()
-        setupTableView()
+        setupCollectionView()
     }
     
     override func viewDidLoad() {
@@ -43,18 +42,26 @@ class ViewController: UIViewController {
     
     // MARK: - Set Up Views
     private extension ViewController{
-        func setupTableView() {
+        func setupCollectionView() {
             // TODO: Set Up CollectionView
-            tableView.dataSource = self
             
-            self.view.addSubview(tableView)
-            //tableView.backgroundColor = .white
-            print("subview")
+            let flowLayout = UICollectionViewFlowLayout()
+            flowLayout.scrollDirection = .vertical
+            collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+            collectionView.backgroundColor = .clear
+            
+            collectionView.translatesAutoresizingMaskIntoConstraints = false
+            collectionView.register(StickmanClothingCell.self, forCellWithReuseIdentifier: StickmanClothingCell.reuse)
+            collectionView.register(StickmanClothingCell.self, forCellWithReuseIdentifier: StickmanClothingCell.reuse)
+            collectionView.dataSource = self
+            
+            view.addSubview(collectionView)
+            
             NSLayoutConstraint.activate([
-                tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-                tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-                tableView.topAnchor.constraint(equalTo: view.topAnchor),
-                tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+                collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+                collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+                collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
             ])
         }
     }
@@ -72,28 +79,24 @@ class ViewController: UIViewController {
 // MARK: - UITableViewDelegateFlowLayout
 
 
-extension ViewController:UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        switch indexPath.row{
-        case 0:
-            cell.backgroundColor = .white
-            print("white")
-        case 1:
-            cell.backgroundColor = .red
-        case 2:
-            cell.backgroundColor = .green
-        default:
-            print("default")
-            break
+extension ViewController:UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0{
+            return 1
         }
-        print("")
-        return cell
+        
+        return posters.count
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StickmanClothingCell.reuse, for: indexPath) as? StickmanClothingCell else{return UICollectionViewCell()}
+        return cell
+        
+        //these are cells for displaying the items for the stickman to wear
+//        else{
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StickmanClothingCell.reuse, for: indexPath) as! StickmanClothingCell
+//            cell.config(post: posters[indexPath.row])
+//            return cell
+//        }
+    }
 }
