@@ -29,7 +29,7 @@ with app.app_context():
     coat = Style(style="coat", category="Top", position="Outer", cold_resistance=40)
     tshirt = Style(style="tshirt", category="Top", position="Inner", cold_resistance=10)
     windbreaker = Style(style="windbreaker", category="Top", position="Outer", cold_resistance=15)
-    thermalUnderwear = Style(style="thermalUnderwear", category="Top/Bottom", position="Inner", cold_resistance=25)
+    thermalUnderwear = Style(style="thermalUnderwear", category="Top", position="Inner", cold_resistance=25)
     leggings = Style(style="leggings", category="Bottom", position="Inner", cold_resistance=10)
     boots = Style(style="boots", category="Shoe", position="Outer", cold_resistance=20)
     sneakers = Style(style="sneakers", category="Shoe", position="Outer", cold_resistance=15)
