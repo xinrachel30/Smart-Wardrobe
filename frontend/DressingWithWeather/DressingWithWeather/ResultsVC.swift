@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController{
+class ResultsVC: UIViewController {
     
     // MARK: - Properties (view)
     
@@ -22,6 +22,7 @@ class ViewController: UIViewController{
     // MARK: - Properties (data)
     
     var posters:[String] = []
+    let button = UIButton()
     //let InputMe:UITextField
     
     // MARK: - viewDidLoad
@@ -36,15 +37,18 @@ class ViewController: UIViewController{
         
         view.backgroundColor = .blue
         let enterButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        enterButton.translatesAutoresizingMaskIntoConstraints = false
+        enterButton.backgroundColor = .gray
+        enterButton.setTitle("Click Mw", for: .normal)
+        //enterButton.addTarget(self, action: #selector(pushView), for: .touchUpInside)
         view.addSubview(enterButton)
-        enterButton.setTitle(<#T##title: String?##String?#>, for: <#T##UIControl.State#>)
     }
 }
         
         
     
     // MARK: - Set Up Views
-    private extension ViewController{
+    private extension ResultsVC {
         func setupCollectionView() {
             // TODO: Set Up CollectionView
             
@@ -57,6 +61,7 @@ class ViewController: UIViewController{
             collectionView.register(StickmanClothingCell.self, forCellWithReuseIdentifier: StickmanClothingCell.reuse)
             collectionView.register(StickmanClothingCell.self, forCellWithReuseIdentifier: StickmanClothingCell.reuse)
             collectionView.dataSource = self
+            collectionView.delegate = self
             
             view.addSubview(collectionView)
             
@@ -82,10 +87,17 @@ class ViewController: UIViewController{
 // MARK: - UITableViewDelegateFlowLayout
 
 
-extension ViewController:UICollectionViewDataSource{
+
+extension ResultsVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 129, height: 146)
+    }
+    
+}
+extension ResultsVC:UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0{
-            print("")
+        if section == 0 {
             return 10
         }
         
@@ -105,4 +117,20 @@ extension ViewController:UICollectionViewDataSource{
 //            return cell
 //        }
     }
+    
+//    @objc func pushView(){
+//        let viewControllerEdit = ResultScreenVC(delegate: self)
+//        navigationController?.pushViewController(viewControllerEdit, animated: true)
+//    }
+    
 }
+
+//extension ViewController: updateTexts {
+//    func updateMajorT(newText: String) {
+//        majorT.text = newText
+//    }
+//
+//    func updateHometownT(newText: String) {
+//        hometownT.text = newText
+//    }
+//}

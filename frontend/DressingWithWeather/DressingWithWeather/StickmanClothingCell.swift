@@ -13,13 +13,38 @@ class StickmanClothingCell: UICollectionViewCell {
     private var numLikes: Int = 0
     static let reuse: String = "StickmanClothingReuse"
     
+    private var article: String!
+    private var clothing: [String]!
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        backgroundColor = .white
+//
+//        layer.cornerRadius = 16
+//        setUpItem()
+//    }
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .white
-        
-        layer.cornerRadius = 16
         setUpItem()
     }
+    
+//pass through configurw to get article and clothing
+
+//    init(article: String, clothing: [String]) {
+//        super.init(frame: CGRect())
+//        self.article = article
+//        self.clothing = clothing
+//
+//        setUpItem()
+//    }
+//
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//        contentView.backgroundColor = .white
+//        setUpItem()
+//    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -40,6 +65,8 @@ class StickmanClothingCell: UICollectionViewCell {
             item.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    //
     
     
     
