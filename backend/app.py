@@ -23,12 +23,36 @@ with app.app_context():
     longSleeve = Style(style="longSleeve", category="Top", position="Inner", cold_resistance=10)
     shortSleeve = Style(style="shortSleeve", category="Top", position="Inner", cold_resistance=5)
     jacket = Style(style="jacket", category="Top", position="Outer", cold_resistance=20)
+    coat = Style(style="coat", category="Top", position="Outer", cold_resistance=25)
+    tshirt = Style(style="tshirt", category="Top", position="Inner", cold_resistance=4)
+    windbreaker = Style(style="windbreaker", category="Top", position="Outer", cold_resistance=15)
+    thermalUnderwear = Style(style="thermalUnderwear", category="Top/Bottom", position="Inner", cold_resistance=25)
+    leggings = Style(style="leggings", category="Bottom", position="Inner", cold_resistance=10)
+    boots = Style(style="boots", category="Shoe", position="Outer", cold_resistance=15)
+    sneakers = Style(style="sneakers", category="Shoe", position="Outer", cold_resistance=10)
+    sandals = Style(style="sandals", category="Shoe", position="Outer", cold_resistance=5)
+    dressShoes = Style(style="dressShoes", category="Shoe", position="Outer", cold_resistance=10)
+    winterBoots = Style(style="winterBoots", category="Shoe", position="Outer", cold_resistance=25)
+
+
+    
 
     db.session.add(sweater)
     db.session.add(jeans)
     db.session.add(longSleeve)
     db.session.add(shortSleeve)
     db.session.add(jacket)
+    db.session.add(coat)
+    db.session.add(tshirt)
+    db.session.add(windbreaker)
+    db.session.add(thermalUnderwear)
+    db.session.add(leggings)
+    db.session.add(boots)
+    db.session.add(sneakers)
+    db.session.add(sandals)
+    db.session.add(dressShoes)
+    db.session.add(winterBoots)
+    db.session.add(shorts)
 
     db.session.commit()
 
