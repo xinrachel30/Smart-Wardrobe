@@ -9,5 +9,5 @@ Smart Wardrobe allows you to track the clothing items you own. You may enter the
 
 Backend:
 - [x] We have two models: Item and Style and they have a one-to-many relationship.
-- [x] We have 6 routes, including a GET route for getting the entire wardrobe, POST routes for creating an item or a style, and a DELETE route for deleting an item 
+- [x] We have 5 routes, including a GET route for getting the entire wardrobe, POST routes for creating an item, and a DELETE route for deleting an item 
 - [x] There is API specification in our ```app.py```

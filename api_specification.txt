@@ -1,0 +1,83 @@
+Expected Functionality
+
+1 -------------------------------
+Get all items
+GET /item/
+
+Response Example: 
+<HTTP STATUS CODE 200>
+{
+    "items": [
+        {
+            "id": 3,
+            "name": "Jeans",
+            "description": "",
+            "style_id": 2
+        },
+        {
+            "id": 4,
+            "name": "Leggings",
+            "description": "",
+            "style_id": 14
+        }
+    ]
+}
+
+2 -------------------------------
+Get item by id
+GET /item/{id}/
+
+Response Example:
+<HTTP STATUS CODE 200>
+{
+    "id": 3,
+    "name": "Jeans",
+    "description": "",
+    "style_id": 2
+}
+
+3 -------------------------------
+Create an item 
+POST /item/create/
+
+Response Example:
+<HTTP STATUS CODE 200>
+{
+    "id": 9,
+    "name": "Red Sweater",
+    "description": "Red sweater with white stripes",
+    "style_id": 1
+}
+
+4 -------------------------------
+Delete an item 
+DELETE /item/{id}/
+
+Response Example:
+<HTTP STATUS CODE 200>
+{
+    "id": 9,
+    "name": "Red Sweater",
+    "description": "Red sweater with white stripes",
+    "style_id": 1
+}
+
+5 -------------------------------
+Get an outfit recommendation
+GET /recommendation/{temp}/
+
+Response Example: 
+<HTTP STATUS CODE 200>
+{
+    "tops": [
+        "ShortSleeves"
+    ],
+    "bottoms": [
+        "Jeans",
+        "Leggings"
+    ],
+    "shoes": [
+        "Winter Boots"
+    ]
+}
+
