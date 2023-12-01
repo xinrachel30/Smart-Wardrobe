@@ -15,14 +15,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:8000/item/",
+					"raw": "http://35.194.86.154/item/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						""
@@ -40,14 +40,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:8000/item/1/",
+					"raw": "http://35.194.86.154/item/1/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"1",
@@ -66,14 +66,14 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:8000/item/1/",
+					"raw": "http://35.194.86.154/item/1/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"1",
@@ -101,14 +101,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:8000/item/create/",
+					"raw": "http://35.194.86.154/item/create/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -133,14 +133,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:8000/item/create/",
+					"raw": "http://35.194.86.154/item/create/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -168,14 +168,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:8000/item/create/",
+					"raw": "http://35.194.86.154/item/create/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -203,14 +203,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:8000/item/create/",
+					"raw": "http://35.194.86.154/item/create/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -238,14 +238,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:8000/item/create/",
+					"raw": "http://35.194.86.154/item/create/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -270,14 +270,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:8000/item/create/",
+					"raw": "http://35.194.86.154/item/create/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -305,14 +305,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:8000/item/create/",
+					"raw": "http://35.194.86.154/item/create/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -340,14 +340,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:8000/item/create/",
+					"raw": "http://35.194.86.154/item/create/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -366,14 +366,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:8000/recommendation/70/",
+					"raw": "http://35.194.86.154/recommendation/70/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"recommendation",
 						"70",
@@ -392,14 +392,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:8000/recommendation/60/",
+					"raw": "http://35.194.86.154/recommendation/60/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"recommendation",
 						"60",
@@ -418,14 +418,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:8000/recommendation/50/",
+					"raw": "http://35.194.86.154/recommendation/50/",
+					"protocol": "http",
 					"host": [
-						"0",
-						"0",
-						"0",
-						"0"
+						"35",
+						"194",
+						"86",
+						"154"
 					],
-					"port": "8000",
 					"path": [
 						"recommendation",
 						"50",
