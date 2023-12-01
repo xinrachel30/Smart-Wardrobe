@@ -34,6 +34,7 @@ class ResultsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Woah"
         
         view.backgroundColor = .blue
         let enterButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))

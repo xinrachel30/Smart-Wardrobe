@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		165A4FD82B1794EB0053AA48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FD72B1794EB0053AA48 /* AppDelegate.swift */; };
 		165A4FDA2B1794EB0053AA48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FD92B1794EB0053AA48 /* SceneDelegate.swift */; };
-		165A4FDC2B1794EB0053AA48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FDB2B1794EB0053AA48 /* ViewController.swift */; };
+		165A4FDC2B1794EB0053AA48 /* ResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FDB2B1794EB0053AA48 /* ResultsVC.swift */; };
 		165A4FE12B1794EC0053AA48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165A4FE02B1794EC0053AA48 /* Assets.xcassets */; };
 		165A4FE42B1794EC0053AA48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165A4FE22B1794EC0053AA48 /* LaunchScreen.storyboard */; };
 		165A4FEC2B1796130053AA48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165A4FEB2B1796130053AA48 /* Main.storyboard */; };
+		165A4FEE2B18819F0053AA48 /* StickmanClothingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FED2B18819F0053AA48 /* StickmanClothingCell.swift */; };
+		165A4FF02B196D3A0053AA48 /* referTolater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FEF2B196D3A0053AA48 /* referTolater.swift */; };
+		165A4FF22B1977FB0053AA48 /* InputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FF12B1977FB0053AA48 /* InputVC.swift */; };
+		165A4FF62B1989A00053AA48 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FF52B1989A00053AA48 /* Models.swift */; };
+		165A4FF82B1A5C4B0053AA48 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FF72B1A5C4A0053AA48 /* Networking.swift */; };
+		F7EE6A5AF3CBDD1C83CB8862 /* Pods_DressingWithWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F326A3A50DFD00BED1FEE23A /* Pods_DressingWithWeather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		165A4FD42B1794EB0053AA48 /* DressingWithWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DressingWithWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165A4FD72B1794EB0053AA48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165A4FD92B1794EB0053AA48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		165A4FDB2B1794EB0053AA48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		165A4FDB2B1794EB0053AA48 /* ResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsVC.swift; sourceTree = "<group>"; };
 		165A4FE02B1794EC0053AA48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		165A4FE32B1794EC0053AA48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		165A4FE52B1794EC0053AA48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		165A4FEB2B1796130053AA48 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		165A4FED2B18819F0053AA48 /* StickmanClothingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickmanClothingCell.swift; sourceTree = "<group>"; };
+		165A4FEF2B196D3A0053AA48 /* referTolater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = referTolater.swift; sourceTree = "<group>"; };
+		165A4FF12B1977FB0053AA48 /* InputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputVC.swift; sourceTree = "<group>"; };
+		165A4FF52B1989A00053AA48 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		165A4FF72B1A5C4A0053AA48 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		AD0198B64715C3696A433E6E /* Pods-DressingWithWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressingWithWeather.debug.xcconfig"; path = "Target Support Files/Pods-DressingWithWeather/Pods-DressingWithWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		E94512CAC145906CC32A7C16 /* Pods-DressingWithWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressingWithWeather.release.xcconfig"; path = "Target Support Files/Pods-DressingWithWeather/Pods-DressingWithWeather.release.xcconfig"; sourceTree = "<group>"; };
+		F326A3A50DFD00BED1FEE23A /* Pods_DressingWithWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DressingWithWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7EE6A5AF3CBDD1C83CB8862 /* Pods_DressingWithWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +57,8 @@
 			children = (
 				165A4FD62B1794EB0053AA48 /* DressingWithWeather */,
 				165A4FD52B1794EB0053AA48 /* Products */,
+				C2AB03B7000D8562DF19684A /* Pods */,
+				C6DC0B6DA446068C8BB22D56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +75,36 @@
 			children = (
 				165A4FD72B1794EB0053AA48 /* AppDelegate.swift */,
 				165A4FD92B1794EB0053AA48 /* SceneDelegate.swift */,
-				165A4FDB2B1794EB0053AA48 /* ViewController.swift */,
+				165A4FDB2B1794EB0053AA48 /* ResultsVC.swift */,
+				165A4FF12B1977FB0053AA48 /* InputVC.swift */,
+				165A4FED2B18819F0053AA48 /* StickmanClothingCell.swift */,
+				165A4FF52B1989A00053AA48 /* Models.swift */,
+				165A4FEF2B196D3A0053AA48 /* referTolater.swift */,
+				165A4FF72B1A5C4A0053AA48 /* Networking.swift */,
 				165A4FE02B1794EC0053AA48 /* Assets.xcassets */,
 				165A4FEB2B1796130053AA48 /* Main.storyboard */,
 				165A4FE22B1794EC0053AA48 /* LaunchScreen.storyboard */,
 				165A4FE52B1794EC0053AA48 /* Info.plist */,
 			);
 			path = DressingWithWeather;
+			sourceTree = "<group>";
+		};
+		C2AB03B7000D8562DF19684A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD0198B64715C3696A433E6E /* Pods-DressingWithWeather.debug.xcconfig */,
+				E94512CAC145906CC32A7C16 /* Pods-DressingWithWeather.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C6DC0B6DA446068C8BB22D56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F326A3A50DFD00BED1FEE23A /* Pods_DressingWithWeather.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +114,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 165A4FE82B1794EC0053AA48 /* Build configuration list for PBXNativeTarget "DressingWithWeather" */;
 			buildPhases = (
+				9B4C083150FBB845E168838F /* [CP] Check Pods Manifest.lock */,
 				165A4FD02B1794EB0053AA48 /* Sources */,
 				165A4FD12B1794EB0053AA48 /* Frameworks */,
 				165A4FD22B1794EB0053AA48 /* Resources */,
+				18C1D7B088AFD30EB727A056 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +175,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18C1D7B088AFD30EB727A056 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DressingWithWeather/Pods-DressingWithWeather-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DressingWithWeather/Pods-DressingWithWeather-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DressingWithWeather/Pods-DressingWithWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B4C083150FBB845E168838F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DressingWithWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		165A4FD02B1794EB0053AA48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				165A4FDC2B1794EB0053AA48 /* ViewController.swift in Sources */,
+				165A4FF02B196D3A0053AA48 /* referTolater.swift in Sources */,
+				165A4FDC2B1794EB0053AA48 /* ResultsVC.swift in Sources */,
+				165A4FF22B1977FB0053AA48 /* InputVC.swift in Sources */,
+				165A4FF82B1A5C4B0053AA48 /* Networking.swift in Sources */,
 				165A4FD82B1794EB0053AA48 /* AppDelegate.swift in Sources */,
+				165A4FEE2B18819F0053AA48 /* StickmanClothingCell.swift in Sources */,
 				165A4FDA2B1794EB0053AA48 /* SceneDelegate.swift in Sources */,
+				165A4FF62B1989A00053AA48 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +363,7 @@
 		};
 		165A4FE92B1794EC0053AA48 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD0198B64715C3696A433E6E /* Pods-DressingWithWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +391,7 @@
 		};
 		165A4FEA2B1794EC0053AA48 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E94512CAC145906CC32A7C16 /* Pods-DressingWithWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
