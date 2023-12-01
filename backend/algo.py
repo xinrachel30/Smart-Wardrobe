@@ -6,8 +6,14 @@ def get_recommendation(temp, items):
     """
     allItem = items
     inner_items = [item for item in items if item['position'] == 'Inner'] + [None]
+    print("Inner items: ")
+    print(inner_items)
     middle_items = [item for item in items if item['position'] == 'Middle']
+    print("Middle items: ")
+    print(middle_items)
     outer_items = [item for item in items if item['position'] == 'Outer'] + [None]
+    print("Outer items: ")
+    print(outer_items)
     
     max_cold_resistance = sum(item['cold_resistance'] for item in items)
     dp = [[(float('inf'), []) for _ in range(max_cold_resistance + 1)] for _ in range(len(middle_items) + 1)]
@@ -36,7 +42,7 @@ def get_recommendation(temp, items):
                     if diff < best_diff or (diff == best_diff and count < len(best_combo)):
                         best_diff = diff
                         best_combo = items + ([inner['id']] if inner else []) + ([outer['id']] if outer else [])
-    if len(best_combo) == 0 and len(items) > 0:
+    if len(best_combo) == 0 and len(allItem) > 0:
         min_cold_resistance = allItem[0]['cold_resistance']
         min_id =  allItem[0]['id']
         for item in allItem:
@@ -44,14 +50,18 @@ def get_recommendation(temp, items):
                 min_cold_resistance = item['cold_resistance']
                 min_id = item['id']
         best_combo = [min_id]
+    print("All Items: ")
+    print(allItem)
+    print("Recommended items: ")
+    print(best_combo)
     return best_combo
 
 # test
 test = [
-    {'id': 1, 'position': 'inner', 'cold_resistance': 1}, 
-    {'id': 2, 'position': 'middle', 'cold_resistance': 2}, 
-    {'id': 3, 'position': 'middle', 'cold_resistance': 3}, 
-    {'id': 4, 'position': 'middle', 'cold_resistance': 4},
-    {'id': 5, 'position': 'middle', 'cold_resistance': 5}
+    {'id': 1, 'position': 'Inner', 'cold_resistance': 1}, 
+    {'id': 2, 'position': 'Middle', 'cold_resistance': 2}, 
+    {'id': 3, 'position': 'Middle', 'cold_resistance': 3}, 
+    {'id': 4, 'position': 'Middle', 'cold_resistance': 4},
+    {'id': 5, 'position': 'Middle', 'cold_resistance': 5}
 ]
-print(get_recommendation(6, test))
+print(get_recommendation(9, test))

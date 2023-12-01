@@ -47,6 +47,7 @@ class Item(db.Model):
         """
         opt_temp = 75
         temp = opt_temp - temp
+        print("Target temp: ")
         print(temp)
         tops = Item.query.join(Style).filter(Style.category == 'Top').all()
         bottoms = Item.query.join(Style).filter(Style.category == 'Bottom').all()
@@ -111,6 +112,7 @@ class Style(db.Model):
         """
         return {
             "id": self.id, 
+            "style": self.style,
             "position": self.position, 
             "cold_resistance": self.cold_resistance
         }
