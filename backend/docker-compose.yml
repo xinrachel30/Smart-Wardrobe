@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  demo:
+    image: xl892/wardrobe:v1
+    ports:
+      - "8000:8000"

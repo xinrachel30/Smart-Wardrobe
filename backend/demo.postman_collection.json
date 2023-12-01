@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "faead70f-cf61-4e20-888e-4f94866a79a1",
+		"_postman_id": "8b11614c-e44f-4463-8900-190c6342e0ad",
 		"name": "Hack Challenge Demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30473863"
+		"_exporter_id": "30439927"
 	},
 	"item": [
 		{
@@ -15,14 +15,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:5000/item/",
+					"raw": "0.0.0.0:8000/item/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						""
@@ -40,14 +40,40 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:5000/item/1/",
+					"raw": "0.0.0.0:8000/item/1/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
+					"path": [
+						"item",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a specific item",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "0.0.0.0:8000/item/1/",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
 					"path": [
 						"item",
 						"1",
@@ -75,14 +101,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:5000/item/create/",
+					"raw": "0.0.0.0:8000/item/create/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -107,14 +133,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:5000/item/create/",
+					"raw": "0.0.0.0:8000/item/create/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -142,14 +168,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:5000/item/create/",
+					"raw": "0.0.0.0:8000/item/create/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -177,14 +203,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:5000/item/create/",
+					"raw": "0.0.0.0:8000/item/create/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -212,14 +238,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:5000/item/create/",
+					"raw": "0.0.0.0:8000/item/create/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -244,14 +270,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:5000/item/create/",
+					"raw": "0.0.0.0:8000/item/create/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -279,14 +305,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:5000/item/create/",
+					"raw": "0.0.0.0:8000/item/create/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -314,14 +340,14 @@
 					}
 				},
 				"url": {
-					"raw": "0.0.0.0:5000/item/create/",
+					"raw": "0.0.0.0:8000/item/create/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"item",
 						"create",
@@ -340,14 +366,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:5000/recommendation/70/",
+					"raw": "0.0.0.0:8000/recommendation/70/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"recommendation",
 						"70",
@@ -366,14 +392,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:5000/recommendation/60/",
+					"raw": "0.0.0.0:8000/recommendation/60/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"recommendation",
 						"60",
@@ -392,14 +418,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "0.0.0.0:5000/recommendation/50/",
+					"raw": "0.0.0.0:8000/recommendation/50/",
 					"host": [
 						"0",
 						"0",
 						"0",
 						"0"
 					],
-					"port": "5000",
+					"port": "8000",
 					"path": [
 						"recommendation",
 						"50",
