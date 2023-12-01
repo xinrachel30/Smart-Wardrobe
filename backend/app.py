@@ -17,46 +17,63 @@ with app.app_context():
     db.create_all()
 
     #initializing some example styles for the database
-    sweater = Style(style="sweater", category="Top", position="Middle", cold_resistance=25)
-    jeans = Style(style="jeans", category="Bottom", position="Middle", cold_resistance=10)
-    sweatpants = Style(style="sweatpants", cateogry="Bottom", position="Middle", cold_resistance=20)
+    sweater = Style(style="sweater", category="Top", position="Middle", cold_resistance=25) #1
+    jeans = Style(style="jeans", category="Bottom", position="Outer", cold_resistance=10)
+    sweatpants = Style(style="sweatpants", category="Bottom", position="Middle", cold_resistance=20)
     shorts = Style(style="shorts", category="Bottom", position="Middle", cold_resistance=5)
     skirt = Style(style="skirt", category="Bottom", position="Middle", cold_resistance=5)
-    longSleeve = Style(style="longSleeve", category="Top", position="Inner", cold_resistance=15)
+    longSleeve = Style(style="longSleeve", category="Top", position="Inner", cold_resistance=15) #6
     shortSleeve = Style(style="shortSleeve", category="Top", position="Inner", cold_resistance=5)
     jacket = Style(style="jacket", category="Top", position="Outer", cold_resistance=20)
     cardigan = Style(style="cardigan", category="Top", position="Outer", cold_resistance=20)
     coat = Style(style="coat", category="Top", position="Outer", cold_resistance=40)
-    tshirt = Style(style="tshirt", category="Top", position="Inner", cold_resistance=10)
+    tshirt = Style(style="tshirt", category="Top", position="Inner", cold_resistance=10) #11
     windbreaker = Style(style="windbreaker", category="Top", position="Outer", cold_resistance=15)
     thermalUnderwear = Style(style="thermalUnderwear", category="Top", position="Inner", cold_resistance=25)
     leggings = Style(style="leggings", category="Bottom", position="Inner", cold_resistance=10)
     boots = Style(style="boots", category="Shoe", position="Outer", cold_resistance=20)
-    sneakers = Style(style="sneakers", category="Shoe", position="Outer", cold_resistance=15)
-    sandals = Style(style="sandals", category="Shoe", position="Outer", cold_resistance=10)
+    sneakers = Style(style="sneakers", category="Shoe", position="Outer", cold_resistance=15) #16
+    sandals = Style(style="sandals", category="Shoe", position="Outer", cold_resistance=5)
     dressShoes = Style(style="dressShoes", category="Shoe", position="Outer", cold_resistance=20)
     winterBoots = Style(style="winterBoots", category="Shoe", position="Outer", cold_resistance=25)
 
-
-    
-
     db.session.add(sweater)
+    db.session.commit()
     db.session.add(jeans)
-    db.session.add(longSleeve)
-    db.session.add(shortSleeve)
-    db.session.add(jacket)
-    db.session.add(coat)
-    db.session.add(tshirt)
-    db.session.add(windbreaker)
-    db.session.add(thermalUnderwear)
-    db.session.add(leggings)
-    db.session.add(boots)
-    db.session.add(sneakers)
-    db.session.add(sandals)
-    db.session.add(dressShoes)
-    db.session.add(winterBoots)
+    db.session.commit()
+    db.session.add(sweatpants)
+    db.session.commit()
     db.session.add(shorts)
-
+    db.session.commit()
+    db.session.add(skirt)
+    db.session.commit()
+    db.session.add(longSleeve)
+    db.session.commit()
+    db.session.add(shortSleeve)
+    db.session.commit()
+    db.session.add(jacket)
+    db.session.commit()
+    db.session.add(cardigan)
+    db.session.commit()
+    db.session.add(coat)
+    db.session.commit()
+    db.session.add(tshirt)
+    db.session.commit()
+    db.session.add(windbreaker)
+    db.session.commit()
+    db.session.add(thermalUnderwear)
+    db.session.commit()
+    db.session.add(leggings)
+    db.session.commit()
+    db.session.add(boots)
+    db.session.commit()
+    db.session.add(sneakers)
+    db.session.commit()
+    db.session.add(sandals)
+    db.session.commit()
+    db.session.add(dressShoes)
+    db.session.commit()
+    db.session.add(winterBoots)
     db.session.commit()
 
 # generalized response formats
@@ -88,6 +105,14 @@ def get_item_by_id(item_id):
     if item is None:
         return failure_response("Item not found")
     return success_response(item.serialize())
+
+@app.route("/style/", methods=["GET"])
+def get_all_styles():
+    """
+    Endpoint for getting all styles in the wardrobe
+    """
+    styles = [style.serialize() for style in Style.query.all()]
+    return success_response({"styles": styles})    
 
 @app.route("/item/create/", methods=["POST"])
 def create_item():
@@ -165,7 +190,7 @@ def create_style():
     return success_response(new_style.serialize(), 201)
 
 # Getting outfit recommendation
-@app.route("/recommendation/<int:temperature>", methods=["GET"])
+@app.route("/recommendation/<int:temperature>/", methods=["GET"])
 def recommend_outfit(temperature):
     """
     Endpoint for getting a recommended outfit given a temperature provided in fahrenheit
