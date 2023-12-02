@@ -16,7 +16,7 @@
 		165A4FEE2B18819F0053AA48 /* StickmanClothingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FED2B18819F0053AA48 /* StickmanClothingCell.swift */; };
 		165A4FF02B196D3A0053AA48 /* referTolater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FEF2B196D3A0053AA48 /* referTolater.swift */; };
 		165A4FF22B1977FB0053AA48 /* InputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FF12B1977FB0053AA48 /* InputVC.swift */; };
-		165A4FF62B1989A00053AA48 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FF52B1989A00053AA48 /* Models.swift */; };
+		165A4FF62B1989A00053AA48 /* weatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FF52B1989A00053AA48 /* weatherResponse.swift */; };
 		165A4FF82B1A5C4B0053AA48 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165A4FF72B1A5C4A0053AA48 /* Networking.swift */; };
 		F7EE6A5AF3CBDD1C83CB8862 /* Pods_DressingWithWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F326A3A50DFD00BED1FEE23A /* Pods_DressingWithWeather.framework */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		165A4FED2B18819F0053AA48 /* StickmanClothingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickmanClothingCell.swift; sourceTree = "<group>"; };
 		165A4FEF2B196D3A0053AA48 /* referTolater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = referTolater.swift; sourceTree = "<group>"; };
 		165A4FF12B1977FB0053AA48 /* InputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputVC.swift; sourceTree = "<group>"; };
-		165A4FF52B1989A00053AA48 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		165A4FF52B1989A00053AA48 /* weatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherResponse.swift; sourceTree = "<group>"; };
 		165A4FF72B1A5C4A0053AA48 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		AD0198B64715C3696A433E6E /* Pods-DressingWithWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressingWithWeather.debug.xcconfig"; path = "Target Support Files/Pods-DressingWithWeather/Pods-DressingWithWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		E94512CAC145906CC32A7C16 /* Pods-DressingWithWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DressingWithWeather.release.xcconfig"; path = "Target Support Files/Pods-DressingWithWeather/Pods-DressingWithWeather.release.xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 				165A4FDB2B1794EB0053AA48 /* ResultsVC.swift */,
 				165A4FF12B1977FB0053AA48 /* InputVC.swift */,
 				165A4FED2B18819F0053AA48 /* StickmanClothingCell.swift */,
-				165A4FF52B1989A00053AA48 /* Models.swift */,
+				165A4FF52B1989A00053AA48 /* weatherResponse.swift */,
 				165A4FEF2B196D3A0053AA48 /* referTolater.swift */,
 				165A4FF72B1A5C4A0053AA48 /* Networking.swift */,
 				165A4FE02B1794EC0053AA48 /* Assets.xcassets */,
@@ -95,7 +95,6 @@
 				AD0198B64715C3696A433E6E /* Pods-DressingWithWeather.debug.xcconfig */,
 				E94512CAC145906CC32A7C16 /* Pods-DressingWithWeather.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -229,7 +228,7 @@
 				165A4FD82B1794EB0053AA48 /* AppDelegate.swift in Sources */,
 				165A4FEE2B18819F0053AA48 /* StickmanClothingCell.swift in Sources */,
 				165A4FDA2B1794EB0053AA48 /* SceneDelegate.swift in Sources */,
-				165A4FF62B1989A00053AA48 /* Models.swift in Sources */,
+				165A4FF62B1989A00053AA48 /* weatherResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

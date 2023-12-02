@@ -17,8 +17,11 @@ class InputVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        AF.request("http://35.194.86.154/recommendation/80/").response{ response in
+            debugPrint(response)
+        }
         view.backgroundColor = .white
+        
         
         setUpQuestion()
         setUpWeatherTF()
