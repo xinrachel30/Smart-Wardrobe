@@ -8,13 +8,11 @@
 import Foundation
 
 struct weatherResponse: Codable {
-    let response: [String: [String]]
+    var tops: [String]
+    var bottoms: [String]
+    var shoes: [String]
+    var response: [String: [String]]
 }
-
-let response = ["tops": ["Red Sweater"],
-    "bottoms": ["Jeans", "Leggings"],
-    "shoes": ["Winter Boots"]]
-
 
 //response["tops"] => ["Red Sweater"]
 

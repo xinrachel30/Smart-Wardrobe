@@ -17,14 +17,14 @@ class NetworkManager {
 
 
 /// Endpoint for dev server
-private let devEndpoint: String = "http://35.194.86.154/recommendation/"
+private let devEndpoint: String = "http://35.194.86.154/recommendation/50/"
 
 
 
 
     func fetchPosts(completion: @escaping ([weatherResponse]) -> Void) {
         // 2. Specify the endpoint
-        let endpoint = "\(devEndpoint)/api/posts/"
+        let endpoint = "\(devEndpoint)"
 
         // 3. Create a decoder
         let decoder = JSONDecoder()

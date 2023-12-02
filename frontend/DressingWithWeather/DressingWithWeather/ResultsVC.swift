@@ -14,7 +14,6 @@ class ResultsVC: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let cells = UICollectionView()
         cells.translatesAutoresizingMaskIntoConstraints = false
-        cells.backgroundColor = .orange
         cells.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         return cells
     }()
@@ -22,7 +21,10 @@ class ResultsVC: UIViewController {
     // MARK: - Properties (data)
     
     var posters:[String] = []
-    let button = UIButton()
+    var temp: String = ""
+    let stickman = UIImageView()
+    weak var delly: temperatureNumber?
+    
     //let InputMe:UITextField
     
     // MARK: - viewDidLoad
@@ -34,16 +36,43 @@ class ResultsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Woah"
         
-        view.backgroundColor = .blue
-        let enterButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        enterButton.translatesAutoresizingMaskIntoConstraints = false
-        enterButton.backgroundColor = .gray
-        enterButton.setTitle("Click Mw", for: .normal)
-        //enterButton.addTarget(self, action: #selector(pushView), for: .touchUpInside)
-        view.addSubview(enterButton)
+        view.backgroundColor = .white
+        title = temp
+        
+        setupStick()
+        setupConstraints()
+        
     }
+    
+    init(delegate:temperatureNumber ,string: String) {
+        super.init(nibName: nil, bundle: nil)
+        delly = delegate
+        temp = string
+        title = temp
+        print("in here")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupStick(){
+        stickman.image = UIImage(named: "Stick Figure")
+        stickman.layer.masksToBounds = true
+        stickman.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(stickman)
+    }
+     
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            stickman.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 138.41),
+            stickman.trailingAnchor.constraint(equalTo: stickman.leadingAnchor, constant: 113.641),
+            stickman.topAnchor.constraint(equalTo: view.topAnchor, constant: 174),
+            stickman.bottomAnchor.constraint(equalTo: stickman.topAnchor, constant: 336.269)
+        ])
+    }
+        
 }
         
         
@@ -56,7 +85,7 @@ class ResultsVC: UIViewController {
             let flowLayout = UICollectionViewFlowLayout()
             flowLayout.scrollDirection = .horizontal
             collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-            collectionView.backgroundColor = .red
+            collectionView.backgroundColor = .clear
             
             collectionView.translatesAutoresizingMaskIntoConstraints = false
             collectionView.register(StickmanClothingCell.self, forCellWithReuseIdentifier: StickmanClothingCell.reuse)
@@ -69,7 +98,7 @@ class ResultsVC: UIViewController {
             NSLayoutConstraint.activate([
                 collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
                 collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-                collectionView.topAnchor.constraint(equalTo: view.centerYAnchor),
+                collectionView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 200),
                 collectionView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: 100)
             ])
         }
@@ -99,7 +128,8 @@ extension ResultsVC:UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 10
+            
+            return 3
         }
         
         return posters.count
@@ -108,6 +138,7 @@ extension ResultsVC:UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StickmanClothingCell.reuse, for: indexPath) as? StickmanClothingCell else{return UICollectionViewCell()}
+        
 
         return cell
         
@@ -126,12 +157,6 @@ extension ResultsVC:UICollectionViewDataSource {
     
 }
 
-//extension ViewController: updateTexts {
-//    func updateMajorT(newText: String) {
-//        majorT.text = newText
-//    }
-//
-//    func updateHometownT(newText: String) {
-//        hometownT.text = newText
-//    }
-//}
+protocol temperatureNumber: InputVC {
+    func getTemperature(temperature:String)
+}

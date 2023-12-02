@@ -13,22 +13,27 @@ class InputVC: UIViewController {
     private let questionTextView = UITextView()
     private let weatherTextField = UITextField()
     private let wearButton = UIButton()
+    private let cloudImage = UIImageView()
+    public var temp: String = ""
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
-        AF.request("http://35.194.86.154/recommendation/80/").response{ response in
-            debugPrint(response)
-        }
-        view.backgroundColor = .white
+        title = "Input Weather!"
+        view.backgroundColor = UIColor(named: "babyBlue")
         
         
         setUpQuestion()
-        setUpWeatherTF()
         setUpButton()
+        setupCloud()
+        setUpWeatherTF()
         
         setupConstraints()
     }
+    
     
     func setUpQuestion(){
         questionTextView.text = "What’s the Weather?"
@@ -40,11 +45,18 @@ class InputVC: UIViewController {
     }
     
     func setUpWeatherTF(){
-        weatherTextField.placeholder = "Forsure enter something"
+        weatherTextField.placeholder = "Enter in °F"
         weatherTextField.translatesAutoresizingMaskIntoConstraints = false
         weatherTextField.font = .systemFont(ofSize:25, weight: .regular)
-        weatherTextField.backgroundColor = .orange
+        weatherTextField.backgroundColor = UIColor(named: "lightBlue")
         view.addSubview(weatherTextField)
+    }
+    
+    func setupCloud(){
+        cloudImage.image = UIImage(named: "Cloud BG")
+        cloudImage.layer.masksToBounds = true
+        cloudImage.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(cloudImage)
     }
     
     func setUpButton(){
@@ -60,17 +72,18 @@ class InputVC: UIViewController {
     @objc func pushView(){
         // delegation for later
         //let viewControllerResults = ResultsVC()
-        navigationController?.pushViewController(ResultsVC(), animated: true)
+        let viewControllerInput = ResultsVC(delegate: self, string: weatherTextField.text!)
+        navigationController?.pushViewController(viewControllerInput, animated: true)
     }
     
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            questionTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            questionTextView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            questionTextView.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -200),
-            questionTextView.bottomAnchor.constraint(equalTo: questionTextView.topAnchor, constant: 50),
-            questionTextView.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: -120)
+            questionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 81),
+            questionTextView.trailingAnchor.constraint(equalTo: questionTextView.leadingAnchor, constant: 250),
+            questionTextView.topAnchor.constraint(equalTo: view.topAnchor, constant: 234),
+            questionTextView.bottomAnchor.constraint(equalTo: questionTextView.topAnchor, constant: 50)
+            
         ])
         
         NSLayoutConstraint.activate([
@@ -86,11 +99,23 @@ class InputVC: UIViewController {
             wearButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: -120)
         ])
         
+        NSLayoutConstraint.activate([
+            cloudImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 310),
+            cloudImage.bottomAnchor.constraint(equalTo: cloudImage.topAnchor, constant: 148),
+            cloudImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 73),
+            cloudImage.trailingAnchor.constraint(equalTo: cloudImage.leadingAnchor, constant: 244.2)
+        ])
+        
+        
     }
     
     
     
 }
-        
+extension InputVC: temperatureNumber {
+    func getTemperature(temperature: String) {
+        temp = temperature
+    }
+}
 
     
